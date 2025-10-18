@@ -1,0 +1,281 @@
+:root{
+    --primaryColor: #ff47b7;
+    --secondaryColor: #f4d210;
+    --secondaryColorLight: #fdf7d2;
+}
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    /*height: 100vh;*/
+    overflow: auto;
+}
+i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*height: 100%;*/
+}
+header{
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0 50px;
+    height: 120px;
+    width: 100%;
+    background-color: var(--primaryColor);
+}
+header .logo{
+    height: 80px;
+    border-radius: 20px;
+}
+header .headerTitle{
+    font-size: 22px;
+    color: #fff;
+}
+
+.sliderParent{
+    display: flex;
+    overflow-y: auto;
+    /*padding-top: 20px;*/
+    /*margin-bottom: 110px;*/
+    /*padding-bottom: 100px;*/
+    height: calc(100vh - 220px);
+    
+}
+
+.introBox{
+    /* display: none; */
+    padding: 50px;
+    width: 100%;
+    height: calc(100vh - 220px);
+    transition: transform 0.3s ease-in-out;
+}
+.introBox .imgBox{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    /*background: #fdf7d2;*/
+    margin-bottom: 20px;
+    background-image: url('/storage/images/deskCover.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.introBox .imgBox .coverImg{
+    width: 100%;
+    border-radius: 10px;
+}
+.introBox .imgBox .mobCover{
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.introBox .introTitle{
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+.introBox .introSubtitle{
+    text-align: justify;
+    font-size: 17px;
+}
+.introBox .introBottomSpan{
+    font-weight: 600;
+}
+.introBox .introTiming{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #fdf7d2cb;
+    width: min-content;
+    text-wrap: nowrap;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--secondaryColor);
+    color: black;
+}
+.introBox .introTiming i{
+    color: var(--secondaryColor);
+}
+.bottomSpacer{
+    height: 40px;
+    width: 100%;
+}
+
+.formBox{
+    padding: 20px 50px;
+    width: 100%;
+    /* height: calc(100vh - 100px); */
+    transform: translateX(100%);
+    display: none;
+    transition: transform 0.3s ease-in-out;
+}
+.formBox .formTitle{
+    margin-bottom: 30px;
+    font-size: 20px;
+
+}
+form{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-direction: column;
+    gap: 20px;
+}
+.formBox .inputBox{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.formBox .inputBox label{
+    color: #2b2a2a;
+}
+.formBox form .textInput{
+    padding: 5px 68px;
+    font-size: 15px;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    transition: .3s;
+}
+.formBox .inputInside{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #77777757;
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.formBox .inputInside i{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    color: #00000057;
+    background: transparent;
+    height: 50px;
+    width: 60px;
+    /* border-right: 2px solid #77777757; */
+    transition: .3s;
+    font-size: 20px;
+}
+.formBox form .inputInside:hover{
+    border-color: #ff47b7;
+}
+.formBox form .inputInside:focus{
+    border-color: #ff47b7;
+}
+.formBox form .inputInside:hover i{
+    color: #ff47b7;
+    border-color: #ff47b7;
+}
+.formBox form .inputInside:focus i{
+    color: #ff47b7;
+    border-color: #ff47b7;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 100px;
+    background-color: #fdeef7;
+    width: 100%;
+    border-top: 1px solid var(--primaryColor);
+}
+footer .slideNextBtn{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--primaryColor);
+    padding: 10px 40px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
+footer .slideNextBtn:hover{
+    box-shadow: -4px 3px 9px 0px #ff47b862;
+}
+
+@media screen and (max-width: 768px) {
+    .sliderParent{
+        /*padding-top: 100px;*/
+        /*margin-bottom: 110px;*/
+        /*height: calc(100vh - 180px);*/
+    }
+    .introBox{
+        padding: 20px;
+    }
+    .introBox .imgBox{
+        height: 140px;
+        background-image: url('/storage/images/mobCover.png');
+        background-size: cover;
+        background-position-x: center;
+    }
+    .introBox .introSubtitle{
+        font-size: 15px;
+    }
+    form{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .formBox{
+        padding: 20px;
+    }
+    header{
+        padding: 20px;
+        height: 100px;
+    }
+    .headerTitle{
+        font-size: 17px!important;
+    }
+    header .logo{
+        width: 60px;
+        height: 60px;
+    }
+    footer{
+        padding: 0 20px;
+        height: 80px;
+    }
+    footer span{
+        font-size: 13px;
+    }
+}
+
+
+.text-sm {
+    font-size: 0.875rem; /* Equivalent to 14px (assuming default font size is 16px) */
+}
+
+/* For text color 'text-red-600' (light mode) */
+.text-red-600 {
+    color: #dc2626; /* Red color in light mode */
+}
+.space-y-1{
+    margin-top: 0.25rem; /* Vertical spacing between elements */
+}
